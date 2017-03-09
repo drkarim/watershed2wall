@@ -1,26 +1,21 @@
-# Quick segmentation for atrial wall 
-Segmentation of atrial wall using iterative dilation and intensity thresholding 
+# Post-processing for marker-controlled Watershed segmentation
+Marker-controlled Watershed segmentation of atrial wall MRI images is possible. However, it requires post-processing for finalising the atrial wall segmentation. The following repository contains two separate that accomplish these tasks 
 
 ## Usage 
-The usage is through command line: 
+The usage for the first tool ```combinmask``` is:
 ```
-la_wall <input_img> <la_mask> <output_img> <intensity_t1> <intensity_t2> <iterations_n>
+combinmask <mask_img> <outfile> <mask_label_1> <mask_label_2> <output_mask_label>
 ```
+This program outputs a mask image by combining pixels with label1 and label2, ***BUT*** only those label2 pixels that are adjacent to label1
 
-## Image requirements 
-Note that the program assumes that the input images are CTA (contrast-enhanced angiography). 
+The output from the first tool is used as input to the second tool below; 
 
-This program outputs the la wall segmented from endocardial segmentation based on intensity values [t1,t2] and dilation with n steps. 
+The usage for the second tool ```watershed2wall``` is:
+```
+watershed2wall <input_MRI_img> <mask_from_combinmask> <out_img> <intensity_t1> <intensity_t2> <max_dist>
+```
+where ```intensity_t1``` and ```intensity_t2``` are intensities (min,max) sampled from atrial wall. ```max_dist``` is the limit on the  distance from atrial chamber that this program should search. 
 
-The program expects a binary mask to be provided as an input parameter ```<la_mask>```, where ```1``` is set as endocardium. This is the endocardial segmentation of the atrial blood pool. 
-
-All input image files are either NifTII or GIPL or HDR Analyze. 
-
-## Parameters 
-the ```<intensity_t1>``` and ```<intensity_t2>``` are intensity ranges manually selected for the atrial wall. 
-
-## Output 
-The program outputs a binary image with the wall labelled sequentially at each iterative step as 1, 2 and so on. 
 
 ## Author 
 ```
