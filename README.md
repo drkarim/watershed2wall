@@ -16,7 +16,7 @@ watershed2wall <input_MRI_img> <mask_from_combinmask> <out_img> <intensity_t1> <
 ```
 where ```intensity_t1``` and ```intensity_t2``` are intensities (min,max) sampled from atrial wall. ```max_dist``` is the limit on the  distance from atrial chamber that this program should search. 
 
-![alt tag](https://postimg.org/image/5x98t9lwf/)
+![alt tag](https://s3.postimg.org/qhe2rr1nn/Capture.png)
 
 ## Author 
 ```
