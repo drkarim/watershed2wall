@@ -16,6 +16,15 @@ watershed2wall <input_MRI_img> <mask_from_combinmask> <out_img> <intensity_t1> <
 ```
 where ```intensity_t1``` and ```intensity_t2``` are intensities (min,max) sampled from atrial wall. ```max_dist``` is the limit on the  distance from atrial chamber that this program should search. 
 
+
+## Example 
+
+In the example below, the ```combinmask``` combines the Watershed segmentation of LA and wall into a single mask. 
+
+The Watershed segmentation is obtained from the marker-controlled Watershsed implementation in [ImageJ](https://imagej.nih.gov/ij/). The segmentation is run on the gradient-magnitude edge output of the original MRI image of the atrial wall. 
+
+The ```watershed2wall``` tool extracts pixels that are within a distance ```max_dist``` from the mask and within thresholds ```t1``` and ```t2```. 
+
 ![alt tag](https://s3.postimg.org/qhe2rr1nn/Capture.png)
 
 ## Author 
