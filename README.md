@@ -1,5 +1,5 @@
 # Post-processing for marker-controlled Watershed segmentation
-We have tested a Marker-controlled Watershed segmentation [ImageJ](https://imagej.nih.gov/ij/) implementation on CMR images of the left atrium. The Watershed process is run on the [Gradient magnitude](https://en.wikipedia.org/wiki/Image_gradient) of the CMR image. 
+For extracting the left atrial myocardial wall, we have tested a Marker-controlled Watershed segmentation [ImageJ](https://imagej.nih.gov/ij/) implementation on CMR images of the left atrium [Varela et al.](#further-reading). The Watershed process is run on the [Gradient magnitude](https://en.wikipedia.org/wiki/Image_gradient) of the CMR image. 
 
 However, it requires post-processing for finalising the atrial wall segmentation. The following repository contains two separate that accomplish these post-processing tasks. 
 
@@ -28,6 +28,11 @@ The Watershed segmentation is obtained from the marker-controlled Watershsed imp
 The ```watershed2wall``` tool extracts pixels that are within a distance ```max_dist``` from the mask and within thresholds ```t1``` and ```t2```. 
 
 ![alt tag](https://s3.postimg.org/qhe2rr1nn/Capture.png)
+
+## Further reading
+[Karim et al. 'Segmentation Challenge on the Quantification of Left Atrial Wall Thickness'](http://www.doc.ic.ac.uk/~rkarim/files/stacom_2016.pdf) and link to [Springer repository](https://link.springer.com/chapter/10.1007%2F978-3-319-52718-5_21)
+
+[Varela, M., Kolbitsch, C., Theron, A., Morgan, R., Henningsson, M., Schaeffter, T., Aslanidi, O.: 3D high-resolution atrial wall thickness maps using black-blood psir. J. Cardiovasc. Magn. Reson. (Suppl.) 17 (2015). Society of Magnetic Resonance Imaging (SCMR)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4328285/)
 
 ## Author 
 ```
