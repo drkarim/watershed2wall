@@ -1,5 +1,7 @@
 # Post-processing for marker-controlled Watershed segmentation
-Marker-controlled Watershed segmentation of atrial wall MRI images is possible. However, it requires post-processing for finalising the atrial wall segmentation. The following repository contains two separate that accomplish these tasks 
+We have tested a Marker-controlled Watershed segmentation (ImageJ)[(https://imagej.nih.gov/ij/] implementation on CMR images of the left atrium. The Watershed process is run on the (Gradient magnitude)[https://en.wikipedia.org/wiki/Image_gradient] of the CMR image. 
+
+However, it requires post-processing for finalising the atrial wall segmentation. The following repository contains two separate that accomplish these tasks 
 
 ## Usage 
 The usage for the first tool ```combinmask``` is:
