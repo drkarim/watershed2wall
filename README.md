@@ -6,7 +6,7 @@ However, it requires post-processing for finalising the atrial wall segmentation
 ## Usage 
 The usage for the first tool ```combinmask``` is:
 ```
-combinmask <mask_img> <outfile> <mask_label_1> <mask_label_2> <output_mask_label>
+combinmask <watershed_mask_img> <outfile> <mask_label_1> <mask_label_2> <output_mask_label>
 ```
 This program outputs a mask image by combining pixels with label1 and label2, ***BUT*** only those label2 pixels that are adjacent to label1
 
